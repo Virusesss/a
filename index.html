@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto File Download</title>
+    <script>
+        const fileName = "yourfile.txt"; // Change this to your file name
+        const downloadInterval = 1000; // Download every 1 second
+
+        function downloadFile() {
+            const link = document.createElement("a");
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        setInterval(downloadFile, downloadInterval);
+    </script>
+</head>
+<body>
+    <h1>Downloading File...</h1>
+</body>
+</html>
